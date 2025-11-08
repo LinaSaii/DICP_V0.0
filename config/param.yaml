@@ -1,0 +1,35 @@
+/**:
+  ros__parameters:
+    frames_directory: "/home/zassi/test_lidar/data/outdoor/outdoor_stationary_scene/outdoor_stationary_scene/stationary_six_column_csv"
+    output_csv_path: "/home/zassi/ros2_ws/icp_pose/outdoor.csv"
+    enable_recording: true
+    recording_directory: "./recordings"
+    enable_persistence_filter: [true]
+    persistence_voxel_size: [0.4]
+    min_persistence_frames: [10]
+    velocity_threshold: [0.1]
+    downsample_factor: [1]
+    max_iterations: [10]
+    icp_tolerance: [1e-9]
+    publish_rate: [10.0]
+    lambda_doppler_start: [0.0]
+    lambda_doppler_end: [0.0]
+    lambda_schedule_iters: [0]
+    frame_dt: [0.1]
+    t_vl_x: [0.0]
+    t_vl_y: [0.0]
+    t_vl_z: [0.0]
+    reject_outliers: [true]
+    outlier_thresh: [0.001]
+    rejection_min_iters: [2]
+    geometric_min_iters: [0]
+    doppler_min_iters: [2]
+    geometric_k: [0.2]
+    doppler_k: [0.3]
+    max_corr_distance: [0.1]
+    min_inliers: [5]
+    last_n_frames: [15]
+    use_voxel_filter: [false]
+    voxel_size: [0.0001]
+    normal_estimation_mode: ["vertical"]
+    static_scene_threshold: [0.5]
