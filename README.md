@@ -166,7 +166,7 @@ ros2 launch doppler_icp_stitcher_open3d_pro2 stitcher_launch.py
 ```bash
 ros2 run foxglove_bridge foxglove_bridge
 ```
-3. Open Foxglove Studio, connect to the bridge WebSocket (commonly `ws://localhost:8765`), import `foxglove/foxglove_layout.json`, and map:
+3. Open Foxglove Studio, connect to the bridge WebSocket (commonly `ws://localhost:8765`), import `foxglove/layout.json`, and map:
 - 3D panel → `/stitch/merged_cloud` (sensor_msgs/PointCloud2)  
 - TF viewer → `/tf`, `/tf_static`  
 - Pose → `/icp_pose`  
