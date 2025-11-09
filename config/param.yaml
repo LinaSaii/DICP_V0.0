@@ -1,35 +1,104 @@
 /**:
   ros__parameters:
-    frames_directory: "/home/farness/Bureau/outdoor/frames_split"
-    output_csv_path: "/home/farness/ws_dicp_cpp/src/icp_pose"
-    enable_recording: true
-    recording_directory: "./recordings"
-    enable_persistence_filter: [true]
-    persistence_voxel_size: [0.4]
-    min_persistence_frames: [10]
-    velocity_threshold: [0.1]
-    downsample_factor: [1]
-    max_iterations: [10]
-    icp_tolerance: [1e-9]
-    publish_rate: [10.0]
-    lambda_doppler_start: [0.0]
-    lambda_doppler_end: [0.0]
-    lambda_schedule_iters: [0]
-    frame_dt: [0.1]
-    t_vl_x: [0.0]
-    t_vl_y: [0.0]
-    t_vl_z: [0.604]
-    reject_outliers: [true]
-    outlier_thresh: [0.001]
-    rejection_min_iters: [2]
-    geometric_min_iters: [0]
-    doppler_min_iters: [2]
-    geometric_k: [0.2]
-    doppler_k: [0.3]
-    max_corr_distance: [0.1]
-    min_inliers: [5]
-    last_n_frames: [15]
-    use_voxel_filter: [false]
-    voxel_size: [0.0001]
-    normal_estimation_mode: ["vertical"]
-    static_scene_threshold: [0.5]
+    # ==========================================================================
+    # DOPPLER ICP STITCHER OPEN3D PRO - CONFIGURATION FILE
+    # ==========================================================================
+    # Point cloud registration system combining traditional
+    # geometric ICP with Doppler velocity constraints for improved accuracy in
+    # dynamic environments. This configuration controls the entire processing
+    # pipeline from input loading to output generation.
+    #
+    # Features:
+    # - Doppler-enhanced iterative closest point algorithm
+    # - Temporal persistence filtering for stable mapping
+    # - GPU-accelerated processing via CUDA
+    # - Robust outlier rejection and adaptive weighting
+    # - Real-time performance optimization
+    #
+    # Usage: Adjust parameters based on sensor characteristics, environment,
+    #        and performance requirements. Parameters in brackets [] indicate
+    #        arrays for multiple values or experimental tuning.
+    # ==========================================================================
+
+    # ==========================================================================
+    # INPUT/OUTPUT CONFIGURATION
+    # ==========================================================================
+    
+    frames_directory: "/home/farness/Bureau/outdoor/frames_split"  # Path to directory containing input point cloud frames (PCD/PLY files)
+    output_csv_path: "/home/farness/ws_dicp_cpp/src/icp_pose"      # File path for output CSV containing estimated poses and trajectories
+    
+    # ==========================================================================
+    # DATA RECORDING & LOGGING
+    # ==========================================================================
+    
+    enable_recording: true                    # Enable/disable recording of intermediate processing results for debugging
+    recording_directory: "./recordings"       # Directory where session recordings and processed data will be stored
+    
+    # ==========================================================================
+    # TEMPORAL PERSISTENCE FILTER CONFIGURATION
+    # ==========================================================================
+    
+    enable_persistence_filter: [true]         # Enable temporal filtering to accumulate stable points over multiple frames
+    persistence_voxel_size: [0.4]             # Voxel size in meters for downsampling persistent point cloud (larger = more aggressive)
+    min_persistence_frames: [10]              # Minimum consecutive frames a point must appear in to be considered persistent
+    velocity_threshold: [0.1]                 # Velocity threshold in m/s for filtering dynamic/moving points from static scene
+    
+    # ==========================================================================
+    # PREPROCESSING & DATA REDUCTION
+    # ==========================================================================
+    
+    downsample_factor: [1]                    # Factor for uniform downsampling (1 = no downsampling, 2 = half resolution)
+    use_voxel_filter: [false]                 # Enable voxel grid filtering for uniform point distribution (alternative to uniform sampling)
+    voxel_size: [0.0001]                      # Voxel size in meters for grid filtering (0.1mm = very high resolution)
+    
+    # ==========================================================================
+    # ICP ALGORITHM CORE PARAMETERS
+    # ==========================================================================
+    
+    max_iterations: [10]                      # Maximum number of ICP iterations per frame pair (trade-off: accuracy vs performance)
+    icp_tolerance: [1e-9]                     # Convergence tolerance - stop when transformation change falls below this value
+    max_corr_distance: [0.1]                  # Maximum distance in meters for point correspondence matching
+    min_inliers: [5]                          # Minimum number of valid point correspondences required for successful registration
+    
+    # ==========================================================================
+    # DOPPLER ENHANCEMENT PARAMETERS
+    # ==========================================================================
+    
+    lambda_doppler_start: [0.0]               # Initial weight of Doppler velocity term in cost function (0 = geometric only)
+    lambda_doppler_end: [0.0]                 # Final weight of Doppler velocity term after scheduling
+    lambda_schedule_iters: [0]                # Number of iterations over which to linearly interpolate Doppler weight
+    doppler_min_iters: [2]                    # Minimum iterations before applying Doppler constraints (allow geometric initialization)
+    doppler_k: [0.3]                          # Adaptive weight factor for Doppler term in multi-objective optimization
+    
+    # ==========================================================================
+    # GEOMETRIC & ROBUST ESTIMATION PARAMETERS
+    # ==========================================================================
+    
+    reject_outliers: [true]                   # Enable statistical outlier rejection for robust correspondence matching
+    outlier_thresh: [0.001]                   # Distance threshold in meters for classifying correspondences as outliers
+    rejection_min_iters: [2]                  # Minimum iterations before applying outlier rejection (allow initial convergence)
+    geometric_min_iters: [0]                  # Minimum iterations using purely geometric constraints before adding Doppler
+    geometric_k: [0.2]                        # Adaptive weight factor for geometric term in multi-objective optimization
+    
+    # ==========================================================================
+    # TEMPORAL & MOTION PARAMETERS
+    # ==========================================================================
+    
+    frame_dt: [0.1]                           # Time delta between consecutive frames in seconds (100ms = 10Hz sensor rate)
+    t_vl_x: [0.0]                             # Initial velocity prior in X direction (m/s) - typically 0 for stationary start
+    t_vl_y: [0.0]                             # Initial velocity prior in Y direction (m/s) - typically 0 for stationary start
+    t_vl_z: [0.604]                           # Initial velocity prior in Z direction (m/s) - example value for specific scenario
+    
+    # ==========================================================================
+    # SYSTEM PERFORMANCE & OUTPUT CONFIGURATION
+    # ==========================================================================
+    
+    publish_rate: [10.0]                      # Rate in Hz for publishing results, visualization, and intermediate data
+    last_n_frames: [15]                       # Number of recent frames to maintain in sliding window for multi-frame processing
+    
+    # ==========================================================================
+    # NORMAL ESTIMATION & SCENE ANALYSIS
+    # ==========================================================================
+    
+    normal_estimation_mode: ["vertical"]      # Strategy for surface normal estimation: "vertical", "horizontal", or "omnidirectional"
+    static_scene_threshold: [0.5]             # Motion magnitude threshold for classifying scene as static vs dynamic
