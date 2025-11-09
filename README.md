@@ -16,7 +16,7 @@ This document is written for the client and maintainers: it highlights purpose, 
 - [Quick start (build & run)](#quick-start-build--run)  
 - [Configuration & parameters](#configuration--parameters)  
 - [ROS interfaces (topics / services)](#ros-interfaces-topics--services)  
-- [Visualization (Foxglove)](#visualization-foxglove)  
+- [Visualization - Foxglove](#visualization-foxglove) 
 - [Troubleshooting & tips](#troubleshooting--tips)  
 - [Development & contribution guidelines](#development--contribution-guidelines)  
 - [License & maintainers](#license--maintainers)  
@@ -213,13 +213,6 @@ Suggested CI (GitHub Actions):
 
 ## Contact & support
 
-For issues and contributions, please open GitHub Issues or Pull Requests in this repository. For urgent support, contact the maintainer (add email above).
+For issues and contributions, please open GitHub Issues or Pull Requests in this repository. For urgent support, contact the maintainer .
 
 ---
-
-## Frequently requested additions (suggested next steps)
-- Add a small demo recording and embed thumbnail (assets/demo_thumb.png) linking to an unlisted YouTube demo.  
-- Add a LICENSE file with a chosen open-source license.  
-- Replace placeholder values and fix any incorrect links (e.g., the clone URL in the previous draft).
-
-
