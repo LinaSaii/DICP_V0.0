@@ -1,0 +1,270 @@
+{
+  "configById": {
+    "3D!2a6tiug": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 21.05263157885799,
+        "phi": 64.22807255962309,
+        "thetaOffset": 95.81286535249409,
+        "targetOffset": [
+          7.357687517492126,
+          -0.07776580368897063,
+          2.7770875504424287e-15
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {
+        "/stitched_cloud": {
+          "visible": true,
+          "colorField": "_auto_distance",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 1,
+          "decayTime": 0
+        },
+        "/icp_trajectory": {
+          "visible": true,
+          "type": "line",
+          "lineWidth": 0.5
+        },
+        "/initialpose": {
+          "visible": true
+        },
+        "/icp_pose": {
+          "visible": true
+        },
+        "/lidar_points": {
+          "visible": false
+        },
+        "/move_base_simple/goal": {
+          "visible": true
+        },
+        "stitched_cloud": {
+          "visible": true,
+          "colorField": "z",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        }
+      },
+      "layers": {
+        "grid": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "c5198770-c2c7-4465-b744-8073009b3d9c",
+          "layerId": "foxglove.Grid",
+          "size": 10,
+          "divisions": 10,
+          "lineWidth": 1,
+          "color": "#248eff",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "followTf": "sensor"
+    },
+    "Plot!3iw8gny": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/angular_velocity.vector.x",
+          "enabled": true,
+          "color": "#4e98e2",
+          "label": "Angular velocity x"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    },
+    "Plot!j81746": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/angular_velocity.vector.y",
+          "enabled": true,
+          "color": "#ff00de",
+          "label": "Angular velocity y"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    },
+    "Plot!cfgjeh": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/angular_velocity.vector.z",
+          "enabled": true,
+          "color": "#ed0027",
+          "label": "Angular velocity z"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    },
+    "Plot!4bna52g": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/linear_acceleration.vector.x",
+          "enabled": true,
+          "color": "#930da1",
+          "label": "linear acceleration x"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    },
+    "Plot!2mge9ya": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/linear_acceleration.vector.y",
+          "enabled": true,
+          "color": "#3dae05",
+          "label": "linear acceleration y"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    },
+    "Plot!24b0w3h": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/linear_acceleration.vector.z",
+          "enabled": true,
+          "color": "#0006f2",
+          "label": "linear acceleration z"
+        }
+      ],
+      "minYValue": -10,
+      "maxYValue": 10,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "timeWindowMode": "sliding"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "drawerConfig": {
+    "tracks": []
+  },
+  "layout": {
+    "first": {
+      "first": "3D!2a6tiug",
+      "second": {
+        "first": "Plot!3iw8gny",
+        "second": {
+          "first": "Plot!j81746",
+          "second": "Plot!cfgjeh",
+          "direction": "column"
+        },
+        "direction": "column",
+        "splitPercentage": 31.628943626791685
+      },
+      "direction": "row",
+      "splitPercentage": 66.31313131313131
+    },
+    "second": {
+      "first": "Plot!4bna52g",
+      "second": {
+        "first": "Plot!2mge9ya",
+        "second": "Plot!24b0w3h",
+        "direction": "row"
+      },
+      "direction": "row",
+      "splitPercentage": 32.474747474747474
+    },
+    "direction": "column",
+    "splitPercentage": 71.03301384451545
+  }
+}

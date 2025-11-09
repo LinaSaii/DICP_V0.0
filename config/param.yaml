@@ -1,7 +1,7 @@
 /**:
   ros__parameters:
-    frames_directory: "/home/zassi/test_lidar/data/outdoor/outdoor_stationary_scene/outdoor_stationary_scene/stationary_six_column_csv"
-    output_csv_path: "/home/zassi/ros2_ws/icp_pose/outdoor.csv"
+    frames_directory: "/home/farness/Bureau/outdoor/frames_split"
+    output_csv_path: "/home/farness/ws_dicp_cpp/src/icp_pose"
     enable_recording: true
     recording_directory: "./recordings"
     enable_persistence_filter: [true]
@@ -18,7 +18,7 @@
     frame_dt: [0.1]
     t_vl_x: [0.0]
     t_vl_y: [0.0]
-    t_vl_z: [0.0]
+    t_vl_z: [0.604]
     reject_outliers: [true]
     outlier_thresh: [0.001]
     rejection_min_iters: [2]

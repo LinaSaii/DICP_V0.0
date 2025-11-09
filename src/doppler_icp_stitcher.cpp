@@ -33,9 +33,8 @@ DopplerICPStitcher::DopplerICPStitcher() : Node("doppler_icp_stitcher"),
 
     // ================= Phase 1: Parameter Declaration =================
     // Core data path parameters
-    declare_parameter("frames_directory", "/home/zassi/test_lidar/data/outdoor/outdoor_stationary_scene/outdoor_stationary_scene/stationary_six_column_csv");
-    declare_parameter("output_csv_path", "/home/zassi/ros2_ws/icp_pose/outdoor.csv");
-   
+    declare_parameter("frames_directory", "/home/farness/Bureau/outdoor/frames_split");
+    declare_parameter("output_csv_path", "//home/farness/ws_dicp_cpp/src/icp_pose");
     // MCAP recording parameters
     declare_parameter("enable_recording", true);
     declare_parameter("recording_directory", "./recordings");
