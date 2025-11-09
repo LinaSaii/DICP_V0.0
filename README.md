@@ -1,6 +1,6 @@
 # Doppler ICP Stitcher (v0.0)
 
-[![C++](https://img.shields.io/badge/lang-C%2B%2B-00599C)]() [![ROS2](https://img.shields.io/badge/ros2-supported-blue)]() [![License](https://img.shields.io/badge/license-TODO-lightgrey)]()
+[![C++](https://img.shields.io/badge/lang-C%2B%2B-00599C)]() [![ROS2](https://img.shields.io/badge/ros2-supported-blue)]() 
 
 A ROS 2 C++ node that fuses Doppler radial velocities with geometric ICP to produce robust stitched point clouds from sequential LiDAR frames. This repository provides the node, configuration examples, a launch file, and an optional Foxglove layout for visualization.
 
