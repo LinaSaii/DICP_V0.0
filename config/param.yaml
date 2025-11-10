@@ -26,7 +26,9 @@
     
     frames_directory: "/home/farness/Bureau/outdoor/frames_split"  # Path to directory containing input point cloud frames (PCD/PLY files)
     output_csv_path: "/home/farness/ws_dicp_cpp/src/icp_pose"      # File path for output CSV containing estimated poses and trajectories
-    
+    frame_dt: [0.1]                                                # Time delta between consecutive frames in seconds (100ms = 10Hz sensor rate)
+    publish_rate: [10.0]                                           # Rate in Hz for publishing results, visualization, and intermediate data
+    last_n_frames: [15]                                            # Number of recent frames to maintain in sliding window for frame stitching processing
     # ==========================================================================
     # DATA RECORDING & LOGGING
     # ==========================================================================
@@ -81,21 +83,15 @@
     geometric_k: [0.2]                        # Adaptive weight factor for geometric term in multi-objective optimization
     
     # ==========================================================================
-    # TEMPORAL & MOTION PARAMETERS
+    # INITIAL MOTION PARAMETERS
     # ==========================================================================
     
-    frame_dt: [0.1]                           # Time delta between consecutive frames in seconds (100ms = 10Hz sensor rate)
-    t_vl_x: [0.0]                             # Initial velocity prior in X direction (m/s) - typically 0 for stationary start
-    t_vl_y: [0.0]                             # Initial velocity prior in Y direction (m/s) - typically 0 for stationary start
-    t_vl_z: [0.604]                           # Initial velocity prior in Z direction (m/s) - example value for specific scenario
+  
+    t_vl_x: [0.0]                             # Initial translation prior in X direction (m) 
+    t_vl_y: [0.0]                             # Initial translation prior in Y direction (m) 
+    t_vl_z: [0.604]                           # Initial translation prior in Z direction (m) - example value for specific scenario
     
-    # ==========================================================================
-    # SYSTEM PERFORMANCE & OUTPUT CONFIGURATION
-    # ==========================================================================
-    
-    publish_rate: [10.0]                      # Rate in Hz for publishing results, visualization, and intermediate data
-    last_n_frames: [15]                       # Number of recent frames to maintain in sliding window for multi-frame processing
-    
+   
     # ==========================================================================
     # NORMAL ESTIMATION & SCENE ANALYSIS
     # ==========================================================================
